@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Band Name Generator</title>
+    <style>
+        body {
+            background: #222;
+            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+            color: rgb(27, 199, 225);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+    
+        #footer {
+            margin-top: auto;
+            padding: 10px;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+    
+        #bandName {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            margin-left: auto;
+            /* Margin left dan right diset ke auto */
+            margin-right: auto;
+        }
+    
+        #generateButton {
+            appearance: none;
+            -webkit-appearance: none;
+            border: 0;
+            font-size: 0.9rem;
+            background: #888;
+            padding: 1rem;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #generateButton:hover {
+            background-color: rgb(255, 20, 192); /* Warna latar belakang saat tombol dihover */
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>Random Band Name Generator</h1>
+    <div id="bandName"></div>
+    <button id="generateButton">Generate Band Name</button>
+    <!-- <p id="footer"></p> -->
+
+    <script>
+        const bandNames = [
+            "The",
+            "Electric", 
+            "Lions",
+            "Neon", 
+            "Echoes",
+            "Velvet", 
+            "Underground",
+            "Midnight", 
+            "Riders",
+            "Echo", 
+            "Chamber",
+            "The", 
+            "Funky", 
+            "Monkeys",
+            "Solar", 
+            "Flares",
+            "Lunar", 
+            "Eclipse",
+            "The", 
+            "Midnight", 
+            "Owls",
+            "Thunderstruck",
+            "The", 
+            "Cosmic", 
+            "Rebels",
+            "Sonic", 
+            "Boom",
+            "The", 
+            "Soul", 
+            "Survivors",
+            "The", 
+            "Quantum", 
+            "Cats"
+        ];
+
+        function generateBandName() {
+            let randomBandName = '';
+            for (let i = 0; i < 2; i++) {
+                const randomIndex = Math.floor(Math.random() * bandNames.length);
+                randomBandName += bandNames[randomIndex] + ' ';
+            }
+            document.getElementById('bandName').textContent = randomBandName.trim();
+        }
+
+        document.getElementById('generateButton').addEventListener('click', generateBandName);
+
+        document.getElementById('footer').textContent = "Copyright © " + new Date().getFullYear() + ". All rights reserved";
+    </script>
+</body>
+
+</html>
